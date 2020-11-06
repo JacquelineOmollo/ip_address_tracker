@@ -19,7 +19,6 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); };
-    #map {position: absolute; top: 0; bottom:0; left: 0; right: 0 ; height: 180px;}
   </style>
 </head>
 <body>
@@ -52,9 +51,20 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    .bindPopup("")
     .openPopup();
+
+  var ip = "8.8.8.8";   
+  var api_key = APP_API;    
+const api_url = "https://geo.ipify.org/api/v1?apiKey=at_sRA24mZAV5ATaf2z7e8mfGhMkK7wu&ipAddress=8.8.8.8"
+async function getData() {
+  const response = await fetch(api_url);
+  const data = await response.json();
+  
+}
+getData();
 </script>
+
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
